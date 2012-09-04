@@ -1,7 +1,9 @@
-set nocompatible    " screw vi-compatible features
-set encoding=utf-8  " utf-8 is fun
+set nocompatible                " screw vi-compatible features
+set encoding=utf-8              " utf-8 is fun
 
-call pathogen#infect()
+call pathogen#infect()          " pathogen
+source ~/.vim/filetypes         " load awesome filetypes
+runtime macros/matchit.vim      " load matchit (included with vim)
 
 set hidden                      " don't yell when hiding modified buffers
 set history=1000                " lots o' history
@@ -16,6 +18,7 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
+set showcmd                     " show partial commands below status line
 set cmdheight=2                 " 2-line command window
 set textwidth=80                " break long lines at 80 characters
 
@@ -48,8 +51,6 @@ set listchars+=extends:>        " the character to show in the last column when
 set listchars+=precedes:<       " the character to show in the first column when
                                 " wrap is off and line is too long.
 
-source ~/.vim/filetypes         " load awesome filetypes
-
 """ Visual
 syntax on                       " highlight my syntax plz
 set cursorline                  " highlight cursor line
@@ -81,9 +82,7 @@ set title
 set titlestring=%-25.55F\ %a%r%m titlelen=70
 
 """ Plugin Configuration
-let g:bufExplorerDefaultHelp=0        " hide bufexplorer's help
 let g:ftplugin_sql_omni_key = '<C-X>' " use C-X instead of C-C in sql.vim
-let g:BufKillFunctionSelectingValidBuffersToDisplay = 'bufexisted'
 
 """ Mappings
 let mapleader = ","
@@ -149,7 +148,7 @@ vmap <leader>{ :Tabularize first_left_stash<CR>
 vmap <leader>} :Tabularize first_right_stash<CR>
 vmap <leader>\| :Tabularize bar<CR>
 
-""" Markdown
+""" **Embolden** selection
 vmap <leader>* S*gvS*
 
 """ Open file in the browser
@@ -159,7 +158,7 @@ augroup Vim
   autocmd!
 
   " Reload vimrc after save.
-  autocmd BufWritePost ~/.vimrc so ~/.vimrc
+  autocmd BufWritePost ~/.vim/vimrc source ~/.vim/vimrc
 
   " Create the directory if it doesn't exist.
   autocmd BufNewFile * silent !mkdir -p $(dirname %)
