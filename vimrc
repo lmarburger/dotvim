@@ -69,17 +69,13 @@ set background=light
 
 """ Status bar
 set laststatus=2
-set statusline=\ %f\                       " filename
-set statusline+=[
-set statusline+=%{strlen(&ft)?&ft:'none'}, " filetype
-set statusline+=%{&fileformat}]            " file format
-set statusline+=%h%m%r%w                   " flag
-set statusline+=%=                         " right align
-set statusline+=%-14.(%l,%c%V%)\ %<%P      " offset
+set statusline=\ %f%(\ [%M%R%W%H]%)       " filename
+set statusline+=%=                        " left align
+set statusline+=%-14.(%l/%L,%v%)\ %<%P\   " offset
 
-" set the window's title to: /path/to/file.txt
+" Set window/terminal title
 set title
-set titlestring=%-25.55F\ %a%r%m titlelen=70
+set titlestring=%F                        " /path/to/file.txt (Vim)
 
 """ Plugin Configuration
 let g:ftplugin_sql_omni_key = '<C-X>' " use C-X instead of C-C in sql.vim
