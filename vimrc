@@ -1,5 +1,3 @@
-" Section: Pathogen
-
 set nocompatible    " screw vi-compatible features
 set encoding=utf-8  " utf-8 is fun
 
@@ -18,13 +16,16 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
-""" SEARCH
+set cmdheight=2                 " 2-line command window
+set textwidth=80                " break long lines at 80 characters
+
+""" Searching
 set hlsearch                    " highlight search results
 set incsearch                   " highlight matches while searching
 set ignorecase                  " ignore case when searching.
 set smartcase                   " override ignorecase if search contains upper case
 
-""" TABS
+""" Whitespace
 set shiftwidth=2                " use 2 spaces for indentation
 set tabstop=2                   " use 2 spaces when tabbinb
 set expandtab                   " use spaces instead of tabs because tabs are evil
@@ -33,42 +34,39 @@ set nojoinspaces                " never use two spaces when joining lines
 set backspace=indent,eol,start  " allow backspacing over autoindent,
                                 " line breaks, and start of insert
 
-set wildmenu                    " tab completion for commands
+""" Tab completion
+set wildmenu
 set wildmode=list:full,full
 set wildignore+=tmp/**
 
-set listchars=""                " Reset the listchars
+""" Show invisible characters
+set listchars=""                " reset the listchars
 set listchars+=tab:\ \          " show tab as two spaces
 set listchars+=trail:.          " show trailing whitespace as .
-set listchars+=extends:>        " The character to show in the last column when
+set listchars+=extends:>        " the character to show in the last column when
                                 " wrap is off and line is too long.
-set listchars+=precedes:<       " The character to show in the first column when
+set listchars+=precedes:<       " the character to show in the first column when
                                 " wrap is off and line is too long.
 
-""" VISUAL
+source ~/.vim/filetypes         " load awesome filetypes
+
+""" Visual
 syntax on                       " highlight my syntax plz
+set cursorline                  " highlight cursor line
+set colorcolumn=+1,+2           " highlight the 81st and 82nd columns
 set t_Co=256                    " more than 8 colors, kthx
+set gfn=Menlo:h12               " Menlo ftw
 colorscheme solarized
-set gfn=Menlo:h12
 
-""" DARK
+""" Light Scheme
+set background=light
+
+""" Dark Scheme
 " set background=dark
 " highlight CursorLine  cterm=none ctermbg=0
 " highlight ColorColumn cterm=none ctermbg=0 guibg=#073642
 
-""" LIGHT
-set background=light
-
-""" HIGHLIGHT
-set cursorline        " highlight cursor line
-set colorcolumn=+1,+2 " highlight the 81st and 82nd columns
-
-set cmdheight=2  " 2-line command window
-"set linebreak    " Wrap lines on word break
-set textwidth=80 " break long lines at 80 characters
-
-""" STATUSBAR
-" statusbar stolen from someone somewhere
+""" Status bar
 set laststatus=2
 set statusline=\ %f\                       " filename
 set statusline+=[
@@ -82,34 +80,31 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P      " offset
 set title
 set titlestring=%-25.55F\ %a%r%m titlelen=70
 
-
-source ~/.vim/filetypes          " load awesome filetypes
-
-""" PLUGIN CONFIG
+""" Plugin Configuration
 let g:bufExplorerDefaultHelp=0        " hide bufexplorer's help
-let NERDTreeQuitOnOpen=1              " hide nerd tree's help
 let g:ftplugin_sql_omni_key = '<C-X>' " use C-X instead of C-C in sql.vim
-
 let g:BufKillFunctionSelectingValidBuffersToDisplay = 'bufexisted'
 
+""" Mappings
+let mapleader = ","
+
+" I like comma for a leader, but I'd still like to use the original Normal mode
+" comma command. Double comma should suffice.
+nmap <leader><leader> ,<ESC>
+
+" Can't be bothered to understand ESC vs <c-c> in insert mode
+" https://github.com/garybernhardt/dotfiles/blob/master/.vimrc#L117-118
+imap <c-c> <esc>
 
 command! W :w " alias :w as :W to fight accidental typos
 
 " Easy expansion of the active file directory. Cite: Practical Vim pg 94.
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-""" MAPPINGS
-let mapleader = ","
-
-" Can't be bothered to understand ESC vs <c-c> in insert mode
-" https://github.com/garybernhardt/dotfiles/blob/master/.vimrc#L117-118
-imap <c-c> <esc>
-
 " delete the active buffer keeping the split open
 map <leader>x :b#<CR>:bd #<CR>
 map <leader>X :bd<CR>
 
-nmap <silent> <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 nmap <leader>u :GundoToggle<CR>
 nmap <leader><cr> :nohlsearch<CR>
 nmap <leader>S :set spell<CR>]s
@@ -139,11 +134,11 @@ nmap <leader>t :tabedit<CR>:buffer #<CR>:bdelete #<CR>
 map <C-t> :CommandTFlush<cr>\|:CommandT<cr>
 
 
-""" RUBY
+""" Ruby
 imap <C-l> <Space>=><Space>
 nmap <leader>R i, record: :new_episodes<ESC>
 
-""" TABULARIZE
+""" Tabularize
 nmap <leader>j vip:Tabularize json<CR>
 vmap <leader>: :Tabularize first_colon<CR>
 vmap <leader>l :Tabularize hash_rocket<CR>
@@ -154,16 +149,36 @@ vmap <leader>{ :Tabularize first_left_stash<CR>
 vmap <leader>} :Tabularize first_right_stash<CR>
 vmap <leader>\| :Tabularize bar<CR>
 
-""" MARKDOWN
+""" Markdown
 vmap <leader>* S*gvS*
 
 """ Open file in the browser
 map <leader>H :!open '%' -a /Applications/Google\ Chrome.app/<CR>
 
-" Execute the last command executed in screen.
-" nmap <leader>l  :w<CR>:call Send_to_Screen("exec_last_feature_or_test\n")<CR>
-" nmap <leader>L  :w<CR>:call Send_to_Screen("!!\n")<CR>
-" nmap <C-t><C-c> :w<CR>:call Send_to_Screen("tc\n")<CR>
+augroup Vim
+  autocmd!
+
+  " Reload vimrc after save.
+  autocmd BufWritePost ~/.vimrc so ~/.vimrc
+
+  " Create the directory if it doesn't exist.
+  autocmd BufNewFile * silent !mkdir -p $(dirname %)
+
+  " Don't syntax highlight markdown because it's often wrong
+  autocmd! FileType markdown setlocal syn=off
+augroup END
+
+augroup CoffeeScript
+  autocmd!
+  autocmd BufNewFile,BufReadPost,BufEnter *.coffee imap <C-l> <Space>->
+  autocmd BufLeave *.coffee imap <C-l> <Space>=><Space>
+augroup END
+
+augroup PlantUML
+  autocmd!
+  autocmd BufNewFile,BufReadPost,BufEnter *.plantuml nmap <leader>. :w<CR>:!java -jar /Users/Larry/.bin/plantuml.jar %<CR>
+  autocmd BufLeave *.plantuml nmap <leader>. :call RunTestFile()<CR>
+augroup END
 
 
 " Shamelessly ripped from Gary Bernhardt's vimrc
@@ -244,56 +259,5 @@ function!  RunJasmineHeadlessFeature(filename)
   exec ":!time jasmine-headless-webkit -c " . a:filename
 endfunction
 
-" I like comma for a leader, but I'd still like to use the original Normal mode
-" comma command. Double comma should suffice.
-nmap <leader><leader> ,<ESC>
 nmap <leader>. :call RunTestFile()<CR>
 nmap <leader>> :silent :!clear<cr>:w<cr>:!ruby -Ilib %<cr>
-
-augroup Vim
-  autocmd!
-
-  " Reload vimrc after save.
-  autocmd BufWritePost ~/.vimrc so ~/.vimrc
-
-  " Create the directory if it doesn't exist.
-  autocmd BufNewFile * silent !mkdir -p $(dirname %)
-
-  " Don't syntax highlight markdown because it's often wrong
-  autocmd! FileType markdown setlocal syn=off
-augroup END
-
-" Various useful Ruby command mode shortcuts
-" augroup Ruby
-"   autocmd!
-"   autocmd BufRead,BufNewFile,BufEnter *.rb
-"     \ :nmap <leader><leader> :call RunRuby()<CR>
-"     "\ :nmap <leader><leader> :w<CR>:call Send_to_Screen("ruby " . expand("%") ."\n")<CR>|
-"   utocmd BufRead,BufNewFile,BufEnter *_test.rb,test_*.rb
-"    \ :nmap <leader><leader> :w<CR>:call Send_to_Screen("clear ; time ruby -Itest -Ilib " . expand("%") ."\n")<CR>|
-"    \ :nmap <leader><leader> :w<CR>:call Send_to_Screen("bundle exec ruby -Itest -Ilib " . expand("%") ."\n")<CR>|
-"   autocmd BufRead,BufNewFile,BufEnter *_spec.rb
-"     \ :nmap <leader><leader> :call RunTestFile()<CR>
-"     "\ :nmap <leader><leader> :w<CR>:call Send_to_Screen("ruby -Ispec -Ilib " . expand("%") . "\n")<CR>|
-"     "\ :nmap <leader><leader> :w<CR>:call Send_to_Screen("bundle exec ruby -Ispec -Ilib " . expand("%") . "\n")<CR>|
-" augroup END
-
-
-augroup CoffeeScript
-  autocmd!
-  autocmd BufNewFile,BufReadPost,BufEnter *.coffee imap <C-l> <Space>->
-  autocmd BufLeave *.coffee imap <C-l> <Space>=><Space>
-augroup END
-
-augroup PlantUML
-  autocmd!
-  autocmd BufNewFile,BufReadPost,BufEnter *.plantuml nmap <leader>. :w<CR>:!java -jar /Users/Larry/.bin/plantuml.jar %<CR>
-  autocmd BufLeave *.plantuml nmap <leader>. :call RunTestFile()<CR>
-augroup END
-
-" augroup Cucumber
-"   autocmd!
-"   autocmd BufNewFile,BufReadPost,BufEnter *.feature,*.story
-"     \ :nmap <leader><leader> :w<CR>:call Send_to_Screen("clear ; time bundle exec cucumber -r features " . expand("%") . "\:<C-R>=line(".")<CR>" ."\n")<CR>|
-"     \ :nmap <leader>R :w<CR>:call Send_to_Screen("clear ; time bundle exec cucumber -r features " . expand("%") ."\n")<CR>|
-" augroup END
