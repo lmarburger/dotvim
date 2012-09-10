@@ -128,7 +128,7 @@ nmap <S-Tab> :tabprevious<CR>
 " vim yells when running `:tabedit %` with a dirty buffer.
 nmap <leader>t :tabedit<CR>:buffer #<CR>:bdelete #<CR>
 
-" Command-T
+" Browsing
 map <C-t> :CommandTFlush<cr>\|:CommandT<cr>
 
 
