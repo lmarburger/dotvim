@@ -100,8 +100,8 @@ command! W :w " alias :w as :W to fight accidental typos
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " delete the active buffer keeping the split open
-map <leader>x :b#<CR>:bd #<CR>
-map <leader>X :bd<CR>
+map <leader>x :bprevious<cr>:bdelete #<cr>
+map <leader>X :bdelete<cr>
 
 nmap <leader>u :GundoToggle<CR>
 nmap <leader><cr> :nohlsearch<CR>
