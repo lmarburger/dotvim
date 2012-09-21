@@ -17,6 +17,8 @@ set undodir=~/.vim/_undo        " store undo history
 set undofile
 set undolevels=1000
 set undoreload=10000
+set splitbelow                  " I like my splits opening below
+set splitright                  " and my vsplits opening to the right
 
 set showcmd                     " show partial commands below status line
 set cmdheight=2                 " 2-line command window
