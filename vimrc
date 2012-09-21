@@ -116,19 +116,15 @@ nmap <leader>A :Ack!<space>
 nmap Y y$
 
 " split and tab management and navigation
-nmap <leader>v :vsplit<CR><C-w><C-w>
-nmap <leader>s :split<CR> <C-w><C-w>
-nmap <leader>w <C-w>p
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-S-l> <C-w>l
-nmap <Tab> :tabnext<CR>
-nmap <S-Tab> :tabprevious<CR>
+nmap <leader>t :tabnext<cr>
+nmap <leader>T :tabprevious<cr>
 
 " Open a new tab with the current buffer. Need to use this :buffer trick because
 " vim yells when running `:tabedit %` with a dirty buffer.
-nmap <leader>t :tabedit<CR>:buffer #<CR>:bdelete #<CR>
 
 " Browsing
 map <C-t> :CommandTFlush<cr>\|:CommandT<cr>
