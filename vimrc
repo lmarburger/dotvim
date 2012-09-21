@@ -140,6 +140,7 @@ nmap <leader>R i, record: :new_episodes<ESC>
 
 """ Tabularize
 nmap <leader>j vip:Tabularize json<CR>
+vmap <leader>j :Tabularize json<CR>
 vmap <leader>: :Tabularize first_colon<CR>
 vmap <leader>l :Tabularize hash_rocket<CR>
 vmap <leader>= :Tabularize first_equals<CR>
