@@ -60,14 +60,7 @@ set colorcolumn=+1,+2           " highlight the 81st and 82nd columns
 set t_Co=256                    " more than 8 colors, kthx
 set gfn=Menlo:h12               " Menlo ftw
 colorscheme solarized
-
-""" Light Scheme
-set background=light
-
-""" Dark Scheme
-" set background=dark
-" highlight CursorLine  cterm=none ctermbg=0
-" highlight ColorColumn cterm=none ctermbg=0 guibg=#073642
+set background=dark             " light also available
 
 """ Status bar
 set laststatus=2
