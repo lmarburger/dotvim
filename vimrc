@@ -65,7 +65,7 @@ set background=dark             " light also available
 """ Status bar
 set laststatus=2
 set statusline=\ %f%(\ [%M%R%W%H]%)       " filename
-set statusline+=%=                        " left align
+set statusline+=%=                        " right align
 set statusline+=%-14.(%l/%L,%v%)\ %<%P\   " offset
 
 " Set window/terminal title
