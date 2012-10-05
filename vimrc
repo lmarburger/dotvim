@@ -116,12 +116,8 @@ nmap <C-S-l> <C-w>l
 nmap <leader>t :tabnext<cr>
 nmap <leader>T :tabprevious<cr>
 
-" Open a new tab with the current buffer. Need to use this :buffer trick because
-" vim yells when running `:tabedit %` with a dirty buffer.
-
 " Browsing
 map <C-t> :CommandTFlush<cr>\|:CommandT<cr>
-
 
 """ Ruby
 imap <C-l> <Space>=><Space>
