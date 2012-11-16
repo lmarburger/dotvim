@@ -59,7 +59,7 @@ set cursorline                  " highlight cursor line
 set colorcolumn=+1,+2           " highlight the 81st and 82nd columns
 set t_Co=256                    " more than 8 colors, kthx
 set gfn=Source\ Code\ Pro:h12   " Menlo is another great font
-colorscheme solarized
+colorscheme base16-default
 set background=dark             " light also available
 
 """ Status bar
