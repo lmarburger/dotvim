@@ -137,6 +137,7 @@ vmap <leader>} :Tabularize first_right_stash<CR>
 vmap <leader>\| :Tabularize bar<CR>
 
 """ **Embolden** selection
+nmap <leader>* viwS*gvS*
 vmap <leader>* S*gvS*
 
 """ Open file in the browser
