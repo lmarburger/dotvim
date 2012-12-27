@@ -42,7 +42,7 @@ set backspace=indent,eol,start  " allow backspacing over autoindent,
 """ Tab completion
 set wildmenu
 set wildmode=list:full,full
-set wildignore+=tmp/**
+set wildignore+=tmp/**,vendor/**,exec/**
 
 """ Show invisible characters
 set listchars=""                " reset the listchars
