@@ -56,7 +56,7 @@ set listchars+=precedes:<       " the character to show in the first column when
 """ Visual
 syntax on                       " highlight my syntax plz
 set cursorline                  " highlight cursor line
-set colorcolumn=+1,+2           " highlight the 81st and 82nd columns
+set colorcolumn=-1,-0           " highlight the 79th and 80th columns
 set t_Co=256                    " more than 8 colors, kthx
 set gfn=Source\ Code\ Pro:h12   " Menlo is another great font
 colorscheme base16-default
