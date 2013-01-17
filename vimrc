@@ -168,6 +168,16 @@ augroup PlantUML
   autocmd BufLeave *.plantuml nmap <leader>. :call RunTestFile()<CR>
 augroup END
 
+augroup SizeWindow
+  autocmd!
+  autocmd WinEnter * call SizeWindow()
+augroup END
+
+function! SizeWindow()
+  if winwidth(winnr()) < 78
+    exec "vertical resize 78"
+  end
+endfunction
 
 " Shamelessly ripped from Gary Bernhardt's vimrc
 "   https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
