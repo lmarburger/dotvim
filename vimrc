@@ -1,5 +1,6 @@
 set nocompatible                " screw vi-compatible features
 set encoding=utf-8              " utf-8 is fun
+set nowrap
 
 call pathogen#infect()          " pathogen
 source ~/.vim/filetypes         " load awesome filetypes
