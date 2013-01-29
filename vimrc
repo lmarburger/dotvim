@@ -144,8 +144,9 @@ vmap <leader>\| :Tabularize bar<CR>
 nmap <leader>* viwS*gvS*
 vmap <leader>* S*gvS*
 
-""" Open file in the browser
-map <leader>H :!open '%' -a /Applications/Google\ Chrome.app/<CR>
+""" Open file in Marked
+map <leader>m :silent !open % -a /Applications/Marked.app<cr>:redraw!<cr>
+
 
 augroup Vim
   autocmd!
