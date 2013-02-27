@@ -78,7 +78,6 @@ let g:ftplugin_sql_omni_key = '<C-X>' " use C-X instead of C-C in sql.vim
 let g:CommandTMaxHeight=10
 let g:CommandTMinHeight=4
 let g:netrw_liststyle=4
-let g:ackprg = 'ag --nogroup --nocolor --column'
 
 """ Mappings
 let mapleader = ","
@@ -107,8 +106,8 @@ nmap <leader>u :GundoToggle<CR>
 nmap <leader><cr> :nohlsearch<CR>
 nmap <leader>S :set spell<CR>]s
 nmap <leader>ns :set nospell<CR>
-nmap <leader>a :Ack<space>
-nmap <leader>A :Ack!<space>
+nmap <leader>a :Ag<space>
+nmap <leader>A :Ag!<space>
 
 " yank until the end of the line
 nmap Y y$
