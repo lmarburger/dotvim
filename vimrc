@@ -180,8 +180,8 @@ augroup SizeWindow
 augroup END
 
 function! SizeWindow()
-  if winwidth(winnr()) < 78
-    exec "vertical resize 78"
+  if winwidth(winnr()) < 79
+    exec "vertical resize 79"
   end
 endfunction
 
