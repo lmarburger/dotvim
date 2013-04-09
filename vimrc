@@ -241,8 +241,8 @@ function! RunSpecs(filename)
 endfunction
 
 function! RunTests(filename)
-  silent exec ":!echo ruby -Itest -Ilib " . a:filename
-  exec ":!time bundle exec ruby -Itest -Ilib " . a:filename
+  silent exec ":!echo ruby -Ivendor/bundle -Itest -Ilib " . a:filename
+  exec ":!time ruby -Ivendor/bundle -Itest -Ilib " . a:filename
 endfunction
 
 function! RunFeature(filename)
