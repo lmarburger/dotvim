@@ -78,7 +78,6 @@ let g:ftplugin_sql_omni_key = '<C-X>' " use C-X instead of C-C in sql.vim
 let g:CommandTMaxHeight=10
 let g:CommandTMinHeight=4
 let g:netrw_liststyle=4
-let g:gitgutter_enabled=0
 highlight clear SignColumn
 
 """ Mappings
