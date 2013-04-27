@@ -52,3 +52,6 @@
 [submodule "bundle/vim-clojure"]
 	path = bundle/vim-clojure
 	url = git://github.com/vim-scripts/VimClojure.git
+[submodule "bundle/vim-fireplace"]
+	path = bundle/vim-fireplace
+	url = git://github.com/tpope/vim-fireplace.git
