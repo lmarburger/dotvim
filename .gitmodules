@@ -49,9 +49,9 @@
 [submodule "bundle/ag.vim"]
 	path = bundle/ag.vim
 	url = git://github.com/epmatsw/ag.vim.git
-[submodule "bundle/vim-clojure"]
-	path = bundle/vim-clojure
-	url = git://github.com/vim-scripts/VimClojure.git
 [submodule "bundle/vim-fireplace"]
 	path = bundle/vim-fireplace
 	url = git://github.com/tpope/vim-fireplace.git
+[submodule "bundle/vim-clojure-static"]
+	path = bundle/vim-clojure-static
+	url = git://github.com/guns/vim-clojure-static.git
