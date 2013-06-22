@@ -197,12 +197,15 @@ function! RunTestFile()
   let in_spec_file    = match(expand("%"), '_spec.rb$') != -1
   let in_test_file    = match(expand("%"), '_test.rb$') != -1
   let in_feature_file = match(expand("%"), '.feature$') != -1
+  let in_clj_file     = match(expand("%"), '.clj$')     != -1
 
   if in_spec_file
     call SetTestFile()
   elseif in_test_file
     call SetTestFile()
   elseif in_feature_file
+    call SetTestFile()
+  elseif in_clj_file
     call SetTestFile()
   elseif !exists("g:grb_test_file")
     return
@@ -223,6 +226,7 @@ function! ChooseTestRunner(filename)
   let run_specs   = match(a:filename, '_spec.rb$') != -1
   let run_tests   = match(a:filename, '_test.rb$') != -1
   let run_feature = match(a:filename, '.feature$') != -1
+  let run_clj     = match(a:filename, '.clj$')     != -1
 
   if run_specs
     call RunSpecs(a:filename)
@@ -230,6 +234,8 @@ function! ChooseTestRunner(filename)
     call RunTests(a:filename)
   elseif run_feature
     call RunFeature(a:filename)
+  elseif run_clj
+    call RunLein(a:filename)
   endif
 endfunction
 
@@ -249,6 +255,11 @@ function! RunFeature(filename)
   silent exec ":!echo bundle exec cucumber -r features " . a:filename
   " exec ":!ruby -Ilib -Ispec " . a:filename
   exec ":!time bundle exec cucumber -r features " . a:filename
+endfunction
+
+function! RunLein(filename)
+  silent exec ":!echo lein test"
+  exec ":!time lein test"
 endfunction
 
 nmap <leader>. :call RunTestFile()<CR>
