@@ -154,6 +154,9 @@ vmap <leader>* S*gvS*
 """ Open file in Marked
 map <leader>m :silent !open "%" -a /Applications/Marked.app<cr>:redraw!<cr>
 
+""" Select the last pasted text
+nmap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
 
 augroup Vim
   autocmd!
