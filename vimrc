@@ -63,6 +63,12 @@ set gfn=Source\ Code\ Pro:h18   " Menlo is another great font
 colorscheme base16-default
 set background=dark             " light also available
 
+""" Color tweaks
+highlight ColorColumn ctermbg=233
+highlight TabLine     ctermbg=0
+highlight TabLineSel  ctermbg=0
+highlight TabLineFill ctermbg=0
+
 """ Status bar
 set laststatus=2
 set statusline=\ %f%(\ [%M%R%W%H]%)       " filename
@@ -78,7 +84,6 @@ let g:ftplugin_sql_omni_key = '<C-X>' " use C-X instead of C-C in sql.vim
 let g:CommandTMaxHeight=10
 let g:CommandTMinHeight=4
 let g:netrw_liststyle=4
-highlight clear SignColumn
 
 """ Mappings
 let mapleader = ","
