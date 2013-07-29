@@ -23,7 +23,7 @@ set splitright                  " and my vsplits opening to the right
 
 set showcmd                     " show partial commands below status line
 set cmdheight=2                 " 2-line command window
-set textwidth=78                " break long lines at 80 characters
+set textwidth=78                " break long lines at 78 characters
 
 """ Searching
 set hlsearch                    " highlight search results
@@ -57,7 +57,7 @@ set listchars+=precedes:<       " the character to show in the first column when
 """ Visual
 syntax on                       " highlight my syntax plz
 set cursorline                  " highlight cursor line
-set colorcolumn=-1,-0           " highlight the 79th and 80th columns
+set colorcolumn=-1,-0           " highlight the 77th and 78th columns
 set t_Co=256                    " more than 8 colors, kthx
 set gfn=Source\ Code\ Pro:h18   " Menlo is another great font
 colorscheme base16-default
