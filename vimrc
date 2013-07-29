@@ -114,6 +114,8 @@ nmap <leader>S :set spell<CR>]s
 nmap <leader>ns :set nospell<CR>
 nmap <leader>a :Ag<space>
 nmap <leader>A :Ag!<space>
+nmap <leader>w :Ag<space><C-r><C-w><cr>
+nmap <leader>W :Ag!<space><C-r><C-w><cr>
 
 " yank until the end of the line
 nmap Y y$
@@ -146,11 +148,11 @@ vmap <leader>} :Tabularize first_right_stash<CR>
 vmap <leader>\| :Tabularize bar<CR>
 
 """ **Embolden** selection
-nmap <leader>* viwS*gvS*
+nmap <leader>* viWS*gvS*
 vmap <leader>* S*gvS*
 
 """ Open file in Marked
-map <leader>m :silent !open % -a /Applications/Marked.app<cr>:redraw!<cr>
+map <leader>m :silent !open "%" -a /Applications/Marked.app<cr>:redraw!<cr>
 
 
 augroup Vim
