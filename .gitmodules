@@ -4,9 +4,6 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = https://github.com/wincent/Command-T
-[submodule "bundle/gundo.vim"]
-	path = bundle/gundo.vim
-	url = https://github.com/sjl/gundo.vim
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular
