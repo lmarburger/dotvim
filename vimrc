@@ -22,7 +22,7 @@ set splitbelow                  " I like my splits opening below
 set splitright                  " and my vsplits opening to the right
 
 set showcmd                     " show partial commands below status line
-set cmdheight=2                 " 2-line command window
+set cmdheight=1                 " 1-line command window
 set textwidth=78                " break long lines at 78 characters
 
 """ Searching
