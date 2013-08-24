@@ -158,11 +158,14 @@ map <leader>m :silent !open "%" -a /Applications/Marked.app<cr>:redraw!<cr>
 nmap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 
-augroup Vim
+augroup Config
   autocmd!
 
   " Reload vimrc after save.
   autocmd BufWritePost ~/.vim/vimrc source ~/.vim/vimrc
+
+  " Reload tmux.conf after save.
+  autocmd BufWritePost ~/Code/dotfiles/.tmux.conf call system('tmux source-file ~/.tmux.conf')
 
   " Create the directory if it doesn't exist.
   autocmd BufNewFile * silent !mkdir -p $(dirname %)
