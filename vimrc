@@ -186,17 +186,16 @@ augroup PlantUML
   autocmd BufLeave *.plantuml nmap <leader>. :call RunTestFile()<CR>
 augroup END
 
-augroup SizeWindow
-  autocmd!
-  autocmd WinEnter * call SizeWindow()
-augroup END
-
 augroup Ronn
   autocmd!
   autocmd BufNewFile,BufReadPost,BufEnter *.ronn nmap <leader>> :silent :!clear<cr>:w<cr>:!gronn<cr>
   autocmd BufLeave *.ronn nmap <leader>> :silent :!clear<cr>:w<cr>:!ruby -Ilib %<cr>
 augroup END
 
+augroup SizeWindow
+  autocmd!
+  autocmd WinEnter * call SizeWindow()
+augroup END
 
 function! SizeWindow()
   if winwidth(winnr()) < 79
