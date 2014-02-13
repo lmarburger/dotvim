@@ -17,11 +17,12 @@ filetype plugin indent on
 " ruby and yaml files are indented by two
 autocmd FileType ruby,rdoc,cucumber,yaml set softtabstop=2 tabstop=2 shiftwidth=2
 
-" Gemfile, Isolate, Vagrantfile and config.ru are ruby
+" Various ruby files
 autocmd BufNewFile,BufRead Gemfile     setfiletype ruby
 autocmd BufNewFile,BufRead Isolate     setfiletype ruby
 autocmd BufNewFile,BufRead Vagrantfile setfiletype ruby
 autocmd BufNewFile,BufRead config.ru   setfiletype ruby
+autocmd BufNewFile,BufRead *.god       setfiletype ruby
 
 " set up compiler for ruby files
 autocmd FileType ruby compiler ruby
