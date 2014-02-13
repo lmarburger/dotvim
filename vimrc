@@ -55,19 +55,22 @@ set listchars+=precedes:<       " the character to show in the first column when
                                 " wrap is off and line is too long.
 
 """ Visual
-syntax on                       " highlight my syntax plz
+" syntax on                       " highlight my syntax plz
+syntax off
 set cursorline                  " highlight cursor line
 set colorcolumn=-1,-0           " highlight the 77th and 78th columns
 set t_Co=256                    " more than 8 colors, kthx
 set gfn=Source\ Code\ Pro:h18   " Menlo is another great font
-colorscheme base16-default
+" colorscheme base16-default
+colorscheme larry
 set background=dark             " light also available
+set fillchars=                  " don't need characters when we have colors
 
-""" Color tweaks
-highlight ColorColumn ctermbg=233
-highlight TabLine     ctermbg=0
-highlight TabLineSel  ctermbg=0
-highlight TabLineFill ctermbg=0
+" """ Color tweaks
+" highlight ColorColumn ctermbg=233
+" highlight TabLine     ctermbg=0
+" highlight TabLineSel  ctermbg=0
+" highlight TabLineFill ctermbg=0
 
 """ Status bar
 set laststatus=2
@@ -88,8 +91,8 @@ let g:netrw_liststyle=4
 """ Mappings
 let mapleader = ","
 
-" I like comma for a leader, but I'd still like to use the original Normal mode
-" comma command. Double comma should suffice.
+" I like comma for a leader, but I'd still like to use the original Normal
+" mode comma command. Double comma should suffice.
 nmap <leader><leader> ,<ESC>
 
 " Can't be bothered to understand ESC vs <c-c> in insert mode
