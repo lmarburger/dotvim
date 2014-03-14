@@ -80,10 +80,11 @@ syntax reset
 let g:colors_name = "larry"
 
 " Borders
-call <sid>hi("ColorColumn",   "none", s:cterm01, "none")
+call <sid>hi("ColorColumn",  "none", s:cterm01, "none")
 call <sid>hi("VertSplit",    s:cterm02, s:cterm02, "none")
 call <sid>hi("StatusLine",   "none", s:cterm02, "bold")
 call <sid>hi("StatusLineNC", s:cterm03, s:cterm02, "none")
+call <sid>hi("WildMenu",     "none", "none", "reverse")
 call <sid>hi("LineNr",       s:cterm00, s:cterm00, "none")
 
 " Tabs
@@ -109,15 +110,16 @@ call <sid>hi("SpellCap",     "", s:cterm00, "underline")
 call <sid>hi("SpellRare",    "", s:cterm00, "underline")
 
 " Popup menu
-call <sid>hi("PMenu",    "none", "none", "none")
+call <sid>hi("PMenu",    "none", s:cterm03, "none")
 call <sid>hi("PMenuSel", "none", "none", "reverse")
 call <sid>hi("PMenuSbar",    "none", s:cterm04, "none")
-call <sid>hi("PMenuThumb",    "none", s:cterm07, "none")
+call <sid>hi("PMenuThumb",    "none", s:cterm02, "none")
 
 " Other stuff
 call <sid>hi("NonText", s:cterm00, "none", "none")
 call <sid>hi("Normal", s:cterm07, "none", "none")
-call <sid>hi("MatchParen", "none", s:cterm03, "none")
+" call <sid>hi("MatchParen", "none", s:cterm03, "none")
+call <sid>hi("MatchParen", "none", "none", "none")
 
 
 " When are these used?
@@ -141,7 +143,6 @@ call <sid>hi("MatchParen", "none", s:cterm03, "none")
 " call <sid>debug("Conceal")
 " call <sid>debug("Cursor")
 " call <sid>debug("SignColumn")
-
 
 " Remove functions
 delf <sid>debug
