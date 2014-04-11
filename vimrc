@@ -12,6 +12,7 @@ set clipboard=unnamed           " link vim and the system's clipboards
 set visualbell                  " no beeping!
 set showmatch                   " flash matching brackets and parens
 set scrolloff=3                 " keep a few lines visible above and below cursor
+" set scrolloff=1                 " keep a few lines visible above and below cursor
 set backupdir=~/.vim/_backup//  " store backup files
 set directory=~/.vim/_tmp//     " store swap files
 set undodir=~/.vim/_undo        " store undo history
@@ -45,32 +46,35 @@ set wildmenu
 set wildmode=list:full,full
 set wildignore+=tmp/**,vendor/**,exec/**,gemfiles/**
 
-""" Show invisible characters
-set listchars=""                " reset the listchars
-set listchars+=tab:\ \          " show tab as two spaces
-set listchars+=trail:.          " show trailing whitespace as .
-set listchars+=extends:>        " the character to show in the last column when
-                                " wrap is off and line is too long.
-set listchars+=precedes:<       " the character to show in the first column when
-                                " wrap is off and line is too long.
+" """ Show invisible characters
+" set listchars=""                " reset the listchars
+" set listchars+=tab:\ \          " show tab as two spaces
+" set listchars+=trail:.          " show trailing whitespace as .
+" set listchars+=extends:>        " the character to show in the last column when
+"                                 " wrap is off and line is too long.
+" set listchars+=precedes:<       " the character to show in the first column when
+"                                 " wrap is off and line is too long.
 
 """ Visual
-" syntax on                       " highlight my syntax plz
-syntax off
+syntax on                       " highlight my syntax plz
 set cursorline                  " highlight cursor line
 set colorcolumn=-1,-0           " highlight the 77th and 78th columns
 set t_Co=256                    " more than 8 colors, kthx
 set gfn=Source\ Code\ Pro:h18   " Menlo is another great font
-" colorscheme base16-default
-colorscheme larry
-set background=dark             " light also available
 set fillchars=                  " don't need characters when we have colors
+set background=dark
+colorscheme base16-default
+" colorscheme larry
 
-" """ Color tweaks
-" highlight ColorColumn ctermbg=233
-" highlight TabLine     ctermbg=0
-" highlight TabLineSel  ctermbg=0
-" highlight TabLineFill ctermbg=0
+" PRESENTATION
+" set scrolloff=1
+" set background=light
+
+""" Color tweaks
+highlight ColorColumn ctermbg=233
+highlight TabLine     ctermbg=0
+highlight TabLineSel  ctermbg=0
+highlight TabLineFill ctermbg=0
 
 """ Status bar
 set laststatus=2
