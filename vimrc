@@ -306,7 +306,7 @@ function! RunLein(filename)
 endfunction
 
 nmap <leader>. :call RunTestFile()<CR>
-nmap <leader>> :silent :!clear<cr>:w<cr>:!ruby -Ilib %<cr>
+nmap <leader>> :silent :!clear<cr>:w<cr>:!ruby -Ilib -Ivendor/bundle %<cr>
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
