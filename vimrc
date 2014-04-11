@@ -98,6 +98,7 @@ let mapleader = ","
 " I like comma for a leader, but I'd still like to use the original Normal
 " mode comma command. Double comma should suffice.
 nmap <leader><leader> ,<ESC>
+nmap <leader>s :w<enter>
 
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc#L117-118
