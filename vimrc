@@ -276,16 +276,15 @@ function! ChooseTestRunner(filename)
   endif
 endfunction
 
-" \:<C-R>=line(".")
 function! RunSpecs(filename)
-  silent exec ":!echo rspec " . a:filename
   " exec ":!ruby -Ilib -Ispec " . a:filename
+  silent exec ":!echo rspec " . a:filename
   exec ":!time rspec " . a:filename
 endfunction
 
 function! RunTests(filename)
-  silent exec ":!echo ruby -Ivendor/bundle -Itest -Ilib " . a:filename
-  exec ":!time ruby -Ivendor/bundle -Itest -Ilib " . a:filename
+  silent exec ":!echo rbtest " . a:filename
+  exec ":!time rbtest " . a:filename
 endfunction
 
 function! RunLein(filename)
@@ -294,7 +293,7 @@ function! RunLein(filename)
 endfunction
 
 nmap <leader>. :call RunTestFile()<CR>
-nmap <leader>> :silent :!clear<cr>:w<cr>:!ruby -Ilib -Ivendor/bundle %<cr>
+nmap <leader>> :silent :!clear<cr>:w<cr>:!ruby rbtest %<cr>
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
