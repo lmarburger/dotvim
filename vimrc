@@ -136,9 +136,6 @@ nmap <C-S-l> <C-w>l
 nmap <leader>t :tabnext<cr>
 nmap <leader>T :tabprevious<cr>
 
-" Browsing
-map <C-t> :CommandTFlush<cr>\|:CommandT<cr>
-
 """ Ruby
 imap <C-l> <Space>=><Space>
 nmap <leader>R i, record: :new_episodes<ESC>
