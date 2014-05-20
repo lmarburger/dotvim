@@ -313,3 +313,12 @@ nnoremap <leader>f :call SelectaCommand("(git ls-files; git ls-files --other --e
 nnoremap <leader>F :call SelectaCommand("(git ls-files; git ls-files --other --exclude-standard)", "", ":tabedit")<cr>
 nnoremap <leader>V :call SelectaCommand("(git ls-files; git ls-files --other --exclude-standard)", "", ":vsplit")<cr>
 nnoremap <leader>S :call SelectaCommand("(git ls-files; git ls-files --other --exclude-standard)", "", ":split")<cr>
+
+augroup xmpfilter
+  autocmd!
+
+  autocmd FileType ruby nmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+  autocmd FileType ruby xmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+  autocmd FileType ruby nmap <buffer> <leader>r <Plug>(xmpfilter-run)
+  autocmd FileType ruby xmap <buffer> <leader>r <Plug>(xmpfilter-run)
+augroup END

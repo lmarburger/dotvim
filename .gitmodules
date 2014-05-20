@@ -58,3 +58,9 @@
 [submodule "bundle/vim-HiLinkTrace"]
 	path = bundle/vim-HiLinkTrace
 	url = git://github.com/gerw/vim-HiLinkTrace.git
+[submodule "bundle/vim-ruby-xmpfilter"]
+	path = bundle/vim-ruby-xmpfilter
+	url = https://github.com/indirect/vim-ruby-xmpfilter
+[submodule "bundle/idris-vim"]
+	path = bundle/idris-vim
+	url = https://github.com/idris-hackers/idris-vim
