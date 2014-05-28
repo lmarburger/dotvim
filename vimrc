@@ -294,9 +294,9 @@ nmap <leader>> :silent !clear<cr>:w<cr>:!ruby -Ivendor/bundle -Itest -Ispec -Ili
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
-function! SelectaCommand(choice_command, selecta_args, vim_command)
+function! SelectaCommand(vim_command)
   try
-    silent let selection = system(a:choice_command . " | selecta " . a:selecta_args)
+    silent let selection = system("git ls-files --modified --cached --other --exclude-standard | uniq | sort | selecta")
   catch /Vim:Interrupt/
     " Swallow the ^C so that the redraw below happens; otherwise there will be
     " leftovers from selecta on the screen
@@ -309,10 +309,10 @@ endfunction
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
-nnoremap <leader>f :call SelectaCommand("(git ls-files; git ls-files --other --exclude-standard)", "", ":edit")<cr>
-nnoremap <leader>F :call SelectaCommand("(git ls-files; git ls-files --other --exclude-standard)", "", ":tabedit")<cr>
-nnoremap <leader>V :call SelectaCommand("(git ls-files; git ls-files --other --exclude-standard)", "", ":vsplit")<cr>
-nnoremap <leader>S :call SelectaCommand("(git ls-files; git ls-files --other --exclude-standard)", "", ":split")<cr>
+nnoremap <leader>f :call SelectaCommand(":edit")<cr>
+nnoremap <leader>F :call SelectaCommand(":tabedit")<cr>
+nnoremap <leader>V :call SelectaCommand(":vsplit")<cr>
+nnoremap <leader>S :call SelectaCommand(":split")<cr>
 
 augroup xmpfilter
   autocmd!
