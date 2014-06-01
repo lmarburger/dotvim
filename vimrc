@@ -296,7 +296,7 @@ nmap <leader>> :silent !clear<cr>:w<cr>:!ruby -Ivendor/bundle -Itest -Ispec -Ili
 " command. See usage below.
 function! SelectaCommand(vim_command)
   try
-    silent let selection = system("git ls-files --modified --cached --other --exclude-standard | uniq | sort | selecta")
+    silent let selection = system("git ls-files --cached --other --exclude-standard | uniq | sort | selecta")
   catch /Vim:Interrupt/
     " Swallow the ^C so that the redraw below happens; otherwise there will be
     " leftovers from selecta on the screen
