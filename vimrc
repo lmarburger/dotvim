@@ -138,6 +138,7 @@ nmap <leader>T :tabprevious<cr>
 
 """ Ruby
 imap <C-l> <Space>=><Space>
+imap <C-k> <Space>-><Space>
 nmap <leader>R i, record: :new_episodes<ESC>
 
 """ Tabularize
@@ -179,12 +180,6 @@ augroup Config
 
   " Don't syntax highlight markdown because it's often wrong
   autocmd! FileType markdown setlocal syn=off
-augroup END
-
-augroup CoffeeScript
-  autocmd!
-  autocmd BufNewFile,BufReadPost,BufEnter *.coffee imap <C-l> <Space>->
-  autocmd BufLeave *.coffee imap <C-l> <Space>=><Space>
 augroup END
 
 augroup PlantUML
