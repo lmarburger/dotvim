@@ -123,10 +123,10 @@ nmap <leader>u :GundoToggle<CR>
 nmap <leader><cr> :nohlsearch<CR>
 nmap <leader>S :set spell<CR>]s
 nmap <leader>ns :set nospell<CR>
-nmap <leader>a :Ag<space>
-nmap <leader>A :Ag!<space>
-nmap <leader>w :Ag<space><C-r><C-w><cr>
-nmap <leader>W :Ag!<space><C-r><C-w><cr>
+nmap <leader>a :Ag!<space>
+nmap <leader>A :Ag<space>
+nmap <leader>w :Ag!<space><C-r><C-w><cr>
+nmap <leader>W :Ag<space><C-r><C-w><cr>
 
 " yank until the end of the line
 nmap Y y$
