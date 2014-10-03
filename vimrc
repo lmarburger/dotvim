@@ -27,7 +27,7 @@ set splitright                  " and my vsplits opening to the right
 
 set showcmd                     " show partial commands below status line
 set cmdheight=1                 " 1-line command window
-set textwidth=78                " break long lines at 78 characters
+set textwidth=80                " break long lines at 80 characters
 
 """ Searching
 set hlsearch                    " highlight search results
@@ -61,7 +61,7 @@ set wildignore+=tmp/**,vendor/**,exec/**,gemfiles/**
 """ Visual
 syntax on                       " highlight my syntax plz
 set cursorline                  " highlight cursor line
-set colorcolumn=-1,-0           " highlight the 77th and 78th columns
+set colorcolumn=-1,-0           " highlight the 79th and 80th columns
 set t_Co=256                    " more than 8 colors, kthx
 set gfn=Source\ Code\ Pro:h18   " Menlo is another great font
 set fillchars=                  " don't need characters when we have colors
@@ -203,8 +203,8 @@ augroup SizeWindow
 augroup END
 
 function! SizeWindow()
-  if winwidth(winnr()) < 79
-    exec "vertical resize 79"
+  if winwidth(winnr()) < 81
+    exec "vertical resize 81"
   end
 endfunction
 
