@@ -233,7 +233,7 @@ endfunction
 
 function! RunTestFile()
   let in_spec_file    = match(expand("%"), '_spec.rb$') != -1
-  let in_test_file    = match(expand("%"), '_test.rb$') != -1
+  let in_test_file    = match(expand("%"), '_test.rb$\|/test_') != -1
   let in_clj_file     = match(expand("%"), '.clj$')     != -1
 
   if in_spec_file
@@ -259,7 +259,7 @@ function! ChooseTestRunner(filename)
   silent !echo;echo;echo;echo;echo
 
   let run_specs   = match(a:filename, '_spec.rb$') != -1
-  let run_tests   = match(a:filename, '_test.rb$') != -1
+  let run_tests   = match(a:filename, '_test.rb$\|/test_') != -1
   let run_clj     = match(a:filename, '.clj$')     != -1
 
   if run_specs
