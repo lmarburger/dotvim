@@ -184,6 +184,9 @@ augroup Config
 
   " Don't syntax highlight markdown because it's often wrong
   autocmd! FileType markdown setlocal syn=off
+
+  " Add Idris support to commentary.vim
+  autocmd FileType idris set commentstring=--\ %s
 augroup END
 
 augroup PlantUML
