@@ -172,6 +172,7 @@ augroup Config
 
   " Reload vimrc after save.
   autocmd BufWritePost ~/.vim/vimrc source ~/.vim/vimrc
+  autocmd BufWritePost ~/.vimrc     source ~/.vim/vimrc
 
   autocmd BufWritePost ~/.vim/colors/larry.vim colorscheme larry
 
