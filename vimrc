@@ -236,42 +236,38 @@ function! RunRuby()
 endfunction
 
 function! RunTestFile()
-  let in_spec_file    = match(expand("%"), '_spec.rb$') != -1
-  let in_test_file    = match(expand("%"), '_test.rb$\|/test_') != -1
-  let in_clj_file     = match(expand("%"), '.clj$')     != -1
+  let in_spec_file    = match(expand('%:t'), '_spec.rb$') != -1
+  let in_test_file    = match(expand('%:t'), '_test.rb$\|/test_') != -1 && expand('%:t') != 'test_helper.rb'
+  let in_clj_file     = expand('%:e') == 'clj'
 
-  if in_spec_file
-    call SetTestFile()
-  elseif in_test_file
-    call SetTestFile()
-  elseif in_clj_file
-    call SetTestFile()
-  elseif !exists("g:grb_test_file")
+  if in_spec_file || in_test_file || in_clj_file
+    let g:grb_test_file=@%
+    if in_spec_file
+      let g:grb_test_runner='spec'
+    elseif in_test_file
+      let g:grb_test_runner='test'
+    elseif in_clj_file
+      let g:grb_test_runner='clj'
+    end
+  end
+
+  if !exists('g:grb_test_file') || !exists('g:grb_test_runner')
+    echo 'No test file to run.'
     return
   end
 
-  call ChooseTestRunner(g:grb_test_file)
-endfunction
-
-function! SetTestFile()
-  " Set the spec file that tests will be run for.
-  let g:grb_test_file=@%
-endfunction
-
-function! ChooseTestRunner(filename)
   write
   silent !echo;echo;echo;echo;echo
 
-  let run_specs   = match(a:filename, '_spec.rb$') != -1
-  let run_tests   = match(a:filename, '_test.rb$\|/test_') != -1
-  let run_clj     = match(a:filename, '.clj$')     != -1
-
-  if run_specs
-    call RunSpecs(a:filename)
-  elseif run_tests
-    call RunTests(a:filename)
-  elseif run_clj
-    call RunLein(a:filename)
+  if g:grb_test_runner == 'spec'
+    echo 'spec'
+    call RunSpecs(g:grb_test_file)
+  elseif g:grb_test_runner == 'test'
+    echo 'test'
+    call RunTests(g:grb_test_file)
+  elseif g:grb_test_runner == 'clj'
+    echo 'clj'
+    call RunLein(g:grb_test_file)
   endif
 endfunction
 
