@@ -67,3 +67,6 @@
 [submodule "bundle/vim-stencil"]
 	path = bundle/vim-stencil
 	url = https://github.com/mrtazz/vim-stencil
+[submodule "bundle/haskell-vim"]
+	path = bundle/haskell-vim
+	url = git://github.com/raichoo/haskell-vim.git
