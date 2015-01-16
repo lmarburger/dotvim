@@ -70,3 +70,9 @@
 [submodule "bundle/haskell-vim"]
 	path = bundle/haskell-vim
 	url = git://github.com/raichoo/haskell-vim.git
+[submodule "bundle/ghcmod-vim"]
+	path = bundle/ghcmod-vim
+	url = git://github.com/eagletmt/ghcmod-vim.git
+[submodule "bundle/vim-hoogle"]
+	path = bundle/vim-hoogle
+	url = git://github.com/Twinside/vim-hoogle.git
