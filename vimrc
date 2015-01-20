@@ -119,10 +119,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 map <leader>x :bprevious<cr>:bdelete #<cr>
 map <leader>X :bdelete<cr>
 
-nmap <leader>u :GundoToggle<CR>
 nmap <leader><cr> :nohlsearch<CR>
-nmap <leader>S :set spell<CR>]s
-nmap <leader>ns :set nospell<CR>
 nmap <leader>a :Ag!<space>
 nmap <leader>A :Ag<space>
 nmap <leader>w :Ag!<space><C-r><C-w><cr>
@@ -139,10 +136,9 @@ nmap <C-S-l> <C-w>l
 nmap <leader>t :tabnext<cr>
 nmap <leader>T :tabprevious<cr>
 
-""" Ruby
+""" Arrows
 imap <C-l> <Space>=><Space>
 imap <C-k> <Space>-><Space>
-nmap <leader>R i, record: :new_episodes<ESC>
 
 """ Tabularize
 nmap <leader>j vip:Tabularize json<CR>
@@ -156,7 +152,7 @@ vmap <leader>{ :Tabularize first_left_stash<CR>
 vmap <leader>} :Tabularize first_right_stash<CR>
 vmap <leader>\| :Tabularize bar<CR>
 
-""" **Embolden** selection
+""" Markdown: **Embolden** selection
 nmap <leader>* viWS*gvS*
 vmap <leader>* S*gvS*
 
@@ -189,18 +185,6 @@ augroup Config
   autocmd FileType idris set commentstring=--\ %s
 augroup END
 
-augroup PlantUML
-  autocmd!
-  autocmd BufNewFile,BufReadPost,BufEnter *.plantuml nmap <leader>. :w<CR>:!java -jar /Users/Larry/.bin/plantuml.jar %<CR>
-  autocmd BufLeave *.plantuml nmap <leader>. :call RunTestFile()<CR>
-augroup END
-
-augroup Ronn
-  autocmd!
-  autocmd BufNewFile,BufReadPost,BufEnter *.ronn nmap <leader>> :silent :!clear<cr>:w<cr>:!gronn<cr>
-  autocmd BufLeave *.ronn nmap <leader>> :silent :!clear<cr>:w<cr>:!ruby -Ilib %<cr>
-augroup END
-
 augroup SizeWindow
   autocmd!
   autocmd WinEnter * call SizeWindow()
@@ -226,8 +210,12 @@ endfunction
 
 vmap <leader>c :call CompileCoffee()<CR>
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RUNNING TESTS
 " Shamelessly ripped from Gary Bernhardt's vimrc
 "   https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! RunRuby()
   " Write the file and run tests for the given filename
   w
@@ -289,6 +277,11 @@ endfunction
 
 nmap <leader>. :call RunTestFile()<CR>
 nmap <leader>> :silent !clear<cr>:w<cr>:!ruby -Ivendor/bundle -Itest -Ispec -Ilib %<cr>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Selecta Mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
