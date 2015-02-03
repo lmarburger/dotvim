@@ -22,9 +22,6 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown
-[submodule "bundle/vim-liquid"]
-	path = bundle/vim-liquid
-	url = https://github.com/tpope/vim-liquid
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
@@ -34,18 +31,12 @@
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script
-[submodule "bundle/plantuml-syntax"]
-	path = bundle/plantuml-syntax
-	url = https://github.com/aklt/plantuml-syntax
 [submodule "bundle/base16-vim"]
 	path = bundle/base16-vim
 	url = https://github.com/chriskempson/base16-vim
 [submodule "bundle/ag.vim"]
 	path = bundle/ag.vim
 	url = git://github.com/epmatsw/ag.vim.git
-[submodule "bundle/vim-fireplace"]
-	path = bundle/vim-fireplace
-	url = git://github.com/tpope/vim-fireplace.git
 [submodule "bundle/vim-clojure-static"]
 	path = bundle/vim-clojure-static
 	url = git://github.com/guns/vim-clojure-static.git
@@ -55,12 +46,6 @@
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = git://github.com/tpope/vim-dispatch.git
-[submodule "bundle/vim-HiLinkTrace"]
-	path = bundle/vim-HiLinkTrace
-	url = git://github.com/gerw/vim-HiLinkTrace.git
-[submodule "bundle/vim-ruby-xmpfilter"]
-	path = bundle/vim-ruby-xmpfilter
-	url = https://github.com/indirect/vim-ruby-xmpfilter
 [submodule "bundle/idris-vim"]
 	path = bundle/idris-vim
 	url = https://github.com/idris-hackers/idris-vim
@@ -73,9 +58,6 @@
 [submodule "bundle/vim-hoogle"]
 	path = bundle/vim-hoogle
 	url = git://github.com/Twinside/vim-hoogle.git
-[submodule "bundle/vimproc.vim"]
-	path = bundle/vimproc.vim
-	url = git://github.com/Shougo/vimproc.vim.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
