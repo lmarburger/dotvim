@@ -127,9 +127,6 @@ nmap <leader>s :w<enter>
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc#L117-118
 imap <c-c> <esc>
 
-" Disable backspace to force use of <C-h> and <C-w>
-inoremap <bs> <nop>
-
 command! W :w " alias :w as :W to fight accidental typos
 
 " Easy expansion of the active file directory. Cite: Practical Vim pg 94.
