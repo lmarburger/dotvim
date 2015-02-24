@@ -15,13 +15,14 @@ set clipboard=unnamed           " link vim and the system's clipboards
 set visualbell                  " no beeping!
 set showmatch                   " flash matching brackets and parens
 set scrolloff=3                 " keep a few lines visible above and below cursor
-" set scrolloff=1                 " keep a few lines visible above and below cursor
+
 set backupdir=~/.vim/_backup//  " store backup files
 set directory=~/.vim/_tmp//     " store swap files
 set undodir=~/.vim/_undo        " store undo history
 set undofile
 set undolevels=1000
 set undoreload=10000
+
 set splitbelow                  " I like my splits opening below
 set splitright                  " and my vsplits opening to the right
 
@@ -69,15 +70,16 @@ set background=dark
 colorscheme base16-default
 " colorscheme larry
 
-" PRESENTATION
-" set scrolloff=1
-" set background=light
-
 """ Color tweaks
 highlight ColorColumn ctermbg=233
 highlight TabLine     ctermbg=0
 highlight TabLineSel  ctermbg=0
 highlight TabLineFill ctermbg=0
+
+
+" """ Presentation
+" set scrolloff=1
+" set background=light
 
 """ Status bar
 set laststatus=2
@@ -85,11 +87,11 @@ set statusline=\ %f%(\ [%M%R%W%H]%)       " filename
 set statusline+=%=                        " right align
 set statusline+=%-14.(%l/%L,%v%)\ %<%P\   " offset
 
-" Set window/terminal title
+""" Set window/terminal title
 set title
 set titlestring=%F                        " /path/to/file.txt (Vim)
 
-" Syntastic
+""" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -187,7 +189,7 @@ augroup Config
   autocmd BufWritePost ~/.vim/vimrc source ~/.vim/vimrc
   autocmd BufWritePost ~/.vimrc     source ~/.vim/vimrc
 
-  autocmd BufWritePost ~/.vim/colors/larry.vim colorscheme larry
+  " autocmd BufWritePost ~/.vim/colors/larry.vim colorscheme larry
 
   " Reload tmux.conf after save.
   autocmd BufWritePost ~/Code/dotfiles/.tmux.conf call system('tmux source-file ~/.tmux.conf')
@@ -233,6 +235,7 @@ vmap <leader>c :call CompileCoffee()<CR>
 " Shamelessly ripped from Gary Bernhardt's vimrc
 "   https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 function! RunRuby()
   " Write the file and run tests for the given filename
   w
@@ -332,15 +335,6 @@ nnoremap <leader>f :call SelectaCommand(":edit")<cr>
 nnoremap <leader>F :call SelectaCommand(":tabedit")<cr>
 nnoremap <leader>V :call SelectaCommand(":vsplit")<cr>
 nnoremap <leader>S :call SelectaCommand(":split")<cr>
-
-augroup xmpfilter
-  autocmd!
-
-  autocmd FileType ruby nmap <buffer> <leader>m <Plug>(xmpfilter-mark)
-  autocmd FileType ruby xmap <buffer> <leader>m <Plug>(xmpfilter-mark)
-  autocmd FileType ruby nmap <buffer> <leader>r <Plug>(xmpfilter-run)
-  autocmd FileType ruby xmap <buffer> <leader>r <Plug>(xmpfilter-run)
-augroup END
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
