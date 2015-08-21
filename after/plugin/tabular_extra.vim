@@ -12,6 +12,8 @@ set cpo&vim
 AddTabularPattern! colon              /:/l1r0
 AddTabularPattern! first_colon        /^[^:]*\zs:/l1r0
 AddTabularPattern! hash_rocket        /=>/
+AddTabularPattern! function_arrow     /->/
+AddTabularPattern! draw_from          /<-/
 AddTabularPattern! equals             /=/
 AddTabularPattern! first_equals       /^[^=]*\zs=/
 AddTabularPattern! bar                /|/l1r1

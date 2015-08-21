@@ -157,13 +157,18 @@ nmap <leader>T :tabprevious<cr>
 
 """ Arrows
 imap <C-l> <Space>=><Space>
+imap <C-f> <Space>-><Space>
 imap <C-k> <Space>-><Space>
+imap <C-d> <Space><-<Space>
 
 """ Tabularize
 nmap <leader>j vip:Tabularize json<CR>
 vmap <leader>j :Tabularize json<CR>
 vmap <leader>: :Tabularize first_colon<CR>
 vmap <leader>l :Tabularize hash_rocket<CR>
+vmap <leader>k :Tabularize function_arrow<CR>
+vmap <leader>f :Tabularize function_arrow<CR>
+vmap <leader>d :Tabularize draw_from<CR>
 vmap <leader>= :Tabularize first_equals<CR>
 vmap <leader>' :Tabularize first_single_quote<CR>
 vmap <leader>" :Tabularize first_double_quote<CR>
