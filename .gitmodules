@@ -64,3 +64,6 @@
 [submodule "bundle/purescript-vim"]
 	path = bundle/purescript-vim
 	url = git://github.com/raichoo/purescript-vim.git
+[submodule "bundle/vim-crystal"]
+	path = bundle/vim-crystal
+	url = https://github.com/rhysd/vim-crystal
