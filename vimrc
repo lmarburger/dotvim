@@ -109,7 +109,7 @@ function! FindCabalSandboxRootPackageConf()
     return glob(FindCabalSandboxRoot().'/*-packages.conf.d')
 endfunction
 
-let g:syntastic_haskell_hdevtools_args = '-g-ilib -g-isrc -g-i. -g-idist/build/autogen -g-Wall -g-package-conf='.FindCabalSandboxRootPackageConf()
+" let g:syntastic_haskell_hdevtools_args = '-g-ilib -g-isrc -g-i. -g-idist/build/autogen -g-Wall -g-package-conf='.FindCabalSandboxRootPackageConf()
 
 """ Plugin Configuration
 let g:ftplugin_sql_omni_key = '<C-X>' " use C-X instead of C-C in sql.vim
