@@ -173,7 +173,6 @@ vmap <leader>j :Tabularize json<CR>
 vmap <leader>: :Tabularize first_colon<CR>
 vmap <leader>l :Tabularize hash_rocket<CR>
 vmap <leader>k :Tabularize function_arrow<CR>
-vmap <leader>f :Tabularize function_arrow<CR>
 vmap <leader>d :Tabularize draw_from<CR>
 vmap <leader>= :Tabularize first_equals<CR>
 vmap <leader>' :Tabularize first_single_quote<CR>
