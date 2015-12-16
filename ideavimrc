@@ -1,0 +1,19 @@
+set clipboard=unnamed  " link vim and the system's clipboards
+
+let mapleader = ","
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+nmap <leader><leader> ,<ESC>
+nmap <leader>s :action SaveAll<enter>
+
+nmap <leader>. :action Rerun<enter>
+nmap <leader>> :action RunClass<enter>
+
+nmap <leader>f :action MoveTabRight<enter>
+nmap <leader>S :action MoveTabDown<enter>
+nmap <leader>V :call SelectaCommand(":vsplit")<cr>
+nmap <leader>S :call SelectaCommand(":split")<cr>
