@@ -45,6 +45,10 @@ set nojoinspaces                " never use two spaces when joining lines
 set backspace=indent,eol,start  " allow backspacing over autoindent,
                                 " line breaks, and start of insert
 
+set noesckeys                   " Esc in insert mode is recognized immediately.
+                                " Without this, using Esc to get out of insert
+                                " mode followed by O is delayed.
+
 """ Tab completion
 set wildmenu
 set wildmode=list:full,full
