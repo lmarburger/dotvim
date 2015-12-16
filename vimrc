@@ -82,6 +82,8 @@ highlight TabLineFill ctermbg=0
 
 
 " """ Presentation
+" """
+" """   Use base16-google.light iTerm color scheme
 " set scrolloff=1
 " set background=light
 
