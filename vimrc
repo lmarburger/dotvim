@@ -324,11 +324,29 @@ nmap <leader>> :silent !clear<cr>:w<cr>:!ruby -Ivendor/bundle -Itest -Ispec -Ili
 " Selecta Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let g:selecta_git_ls_files_command = 'git ls-files --cached --other --exclude-standard'
+let g:selecta_ls_files_command     = 'find * -type f'
+" let g:selecta_ls_file_command      = g:selecta_ls_files_command
+let g:selecta_ls_file_command      = g:selecta_git_ls_files_command
+
+function! TestSelecta()
+  echo "(cat .vs-last 2>/dev/null; " . g:selecta_ls_file_command . ") | selecta"
+endfunction
+
+function! SetSelectaCommand(command)
+  if a:command == 'ls'
+    let g:selecta_ls_file_command = g:selecta_ls_files_command
+  else
+    let g:selecta_ls_file_command = g:selecta_git_ls_files_command
+  endif
+endfunction
+
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
 function! SelectaCommand(vim_command)
   try
-    let selection = system("(cat .vs-last 2>/dev/null; git ls-files --cached --other --exclude-standard) | selecta")
+    let command = "(cat .vs-last 2>/dev/null; " . g:selecta_ls_file_command . ") | selecta"
+    let selection = system(command)
   catch /Vim:Interrupt/
     " Swallow the ^C so that the redraw below happens; otherwise there will be
     " leftovers from selecta on the screen
@@ -345,6 +363,8 @@ nnoremap <leader>f :call SelectaCommand(":edit")<cr>
 nnoremap <leader>F :call SelectaCommand(":tabedit")<cr>
 nnoremap <leader>V :call SelectaCommand(":vsplit")<cr>
 nnoremap <leader>S :call SelectaCommand(":split")<cr>
+nnoremap <leader>l :call SetSelectaCommand("ls")<cr>
+nnoremap <leader>g :call SetSelectaCommand("git")<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
