@@ -15,5 +15,4 @@ nmap <leader>> :action RunClass<enter>
 
 nmap <leader>f :action MoveTabRight<enter>
 nmap <leader>S :action MoveTabDown<enter>
-nmap <leader>V :call SelectaCommand(":vsplit")<cr>
-nmap <leader>S :call SelectaCommand(":split")<cr>
+nmap <leader>x :action Unsplit<enter>
