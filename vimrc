@@ -254,10 +254,10 @@ function! RunRuby()
 endfunction
 
 function! RunTestFile()
-  let in_spec_file    = match(expand('%:t'), '_spec.rb$') != -1
-  let in_test_file    = match(expand('%:t'), '_test.rb$\|/test_') != -1 && expand('%:t') != 'test_helper.rb'
-  let in_clj_file     = expand('%:e') == 'clj'
-  let in_hs_file     = expand('%:e') == 'hs'
+  let in_spec_file = match(expand('%:t'), '_spec.rb$') != -1
+  let in_test_file = match(expand('%:t'), '_test.rb$\|/test_') != -1 && expand('%:t') != 'test_helper.rb'
+  let in_clj_file  = expand('%:e') == 'clj'
+  let in_hs_file   = expand('%:e') == 'hs'
 
   if in_spec_file || in_test_file || in_clj_file || in_hs_file
     let g:grb_test_file=@%
