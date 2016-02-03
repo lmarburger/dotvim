@@ -261,9 +261,9 @@ function! RunTestFile()
 
   if in_spec_file || in_test_file || in_clj_file || in_hs_file
     let g:grb_test_file=@%
-    if in_spec_file
+    if in_spec_file && executable('rspec')
       let g:grb_test_runner='spec'
-    elseif in_test_file
+    elseif in_test_file || in_spec_file
       let g:grb_test_runner='test'
     elseif in_clj_file
       let g:grb_test_runner='clj'
