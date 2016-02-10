@@ -254,6 +254,11 @@ function! RunRuby()
 endfunction
 
 function! RunTestFile()
+  if exists('g:grb_test_rerun_last_command')
+    call RerunLastCommand()
+    return
+  end
+
   let in_spec_file = match(expand('%:t'), '_spec.rb$') != -1
   let in_test_file = match(expand('%:t'), '_test.rb$\|/test_') != -1 && expand('%:t') != 'test_helper.rb'
   let in_clj_file  = expand('%:e') == 'clj'
@@ -316,8 +321,24 @@ function! RunCabal(filename)
   exec ":!time cabal test"
 endfunction
 
+function! RerunLastCommand()
+  echo 'Rerunning last command'
+  exec ":!!!"
+endfunction
+
+function! ToggleRerunLastCommand()
+  if exists('g:grb_test_rerun_last_command')
+    echo 'Running test'
+    unlet g:grb_test_rerun_last_command
+  else
+    echo 'Rerunning last command'
+    let g:grb_test_rerun_last_command = 1
+  end
+endfunction
+
 nmap <leader>. :call RunTestFile()<CR>
 nmap <leader>> :silent !clear<cr>:w<cr>:!ruby -Ivendor/bundle -Itest -Ispec -Ilib %<cr>
+nmap <leader>! :call ToggleRerunLastCommand()<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
