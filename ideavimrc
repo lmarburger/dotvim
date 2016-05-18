@@ -16,3 +16,5 @@ nmap <leader>> :action RunClass<enter>
 nmap <leader>f :action MoveTabRight<enter>
 nmap <leader>S :action MoveTabDown<enter>
 nmap <leader>x :action Unsplit<enter>
+
+nmap <leader>r :action Refactorings.QuickListPopupAction<enter>
