@@ -248,12 +248,14 @@ vmap <leader>c :call CompileCoffee()<CR>
 
 function! RunRuby()
   " Write the file and run tests for the given filename
-  w
+  write
   silent !echo;echo;echo;echo;echo
   exec ":!ruby " . expand("%")
 endfunction
 
 function! RunTestFile()
+  write
+
   if exists('g:grb_test_rerun_last_command')
     call RerunLastCommand()
     return
@@ -282,7 +284,6 @@ function! RunTestFile()
     return
   end
 
-  write
   silent !echo;echo;echo;echo;echo
 
   if g:grb_test_runner == 'spec'
