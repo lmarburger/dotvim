@@ -1,4 +1,5 @@
 set clipboard=unnamed  " link vim and the system's clipboards
+set ignorecase         " ignore case when searching.
 
 let mapleader = ","
 
@@ -18,3 +19,8 @@ nmap <leader>S :action MoveTabDown<enter>
 nmap <leader>x :action Unsplit<enter>
 
 nmap <leader>r :action Refactorings.QuickListPopupAction<enter>
+nmap <leader>u :action ShowUsages<enter>
+
+nmap <leader>h :action QuickJavaDoc<enter>
+
+map <leader>g :action Github.Open.In.Browser<enter>
