@@ -64,14 +64,15 @@ set wildignore+=tmp/**,vendor/**,exec/**,gemfiles/**
 "                                 " wrap is off and line is too long.
 
 """ Visual
-syntax on                       " highlight my syntax plz
-set cursorline                  " highlight cursor line
-set colorcolumn=-1,-0           " highlight the 79th and 80th columns
-set t_Co=256                    " more than 8 colors, kthx
-set gfn=Source\ Code\ Pro:h18   " Menlo is another great font
-set fillchars=                  " don't need characters when we have colors
+syntax on                   " highlight my syntax plz
+set cursorline              " highlight cursor line
+set colorcolumn=-1,-0       " highlight the 79th and 80th columns
+set t_Co=256                " more than 8 colors, kthx
+" set macligatures
+set guifont=Fira\ Code:h18  " Menlo & Source Code Pro are other great fonts
+set fillchars=              " don't need characters when we have colors
 set background=dark
-colorscheme base16-default
+colorscheme base16-default-dark
 " colorscheme larry
 
 """ Color tweaks
