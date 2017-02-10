@@ -34,9 +34,6 @@
 [submodule "bundle/base16-vim"]
 	path = bundle/base16-vim
 	url = https://github.com/chriskempson/base16-vim
-[submodule "bundle/ag.vim"]
-	path = bundle/ag.vim
-	url = git://github.com/epmatsw/ag.vim.git
 [submodule "bundle/vim-clojure-static"]
 	path = bundle/vim-clojure-static
 	url = git://github.com/guns/vim-clojure-static.git
@@ -46,24 +43,12 @@
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = git://github.com/tpope/vim-dispatch.git
-[submodule "bundle/idris-vim"]
-	path = bundle/idris-vim
-	url = https://github.com/idris-hackers/idris-vim
 [submodule "bundle/vim-stencil"]
 	path = bundle/vim-stencil
 	url = https://github.com/mrtazz/vim-stencil
-[submodule "bundle/haskell-vim"]
-	path = bundle/haskell-vim
-	url = git://github.com/raichoo/haskell-vim.git
-[submodule "bundle/vim-hoogle"]
-	path = bundle/vim-hoogle
-	url = git://github.com/Twinside/vim-hoogle.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "bundle/purescript-vim"]
-	path = bundle/purescript-vim
-	url = git://github.com/raichoo/purescript-vim.git
-[submodule "bundle/vim-crystal"]
-	path = bundle/vim-crystal
-	url = https://github.com/rhysd/vim-crystal
+[submodule "bundle/ack.vim"]
+	path = bundle/ack.vim
+	url = git://github.com/mileszs/ack.vim.git

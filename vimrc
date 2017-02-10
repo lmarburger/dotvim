@@ -124,6 +124,9 @@ let g:CommandTMaxHeight=10
 let g:CommandTMinHeight=4
 let g:netrw_liststyle=4
 
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
+
 """ Mappings
 let mapleader = ","
 
@@ -146,10 +149,10 @@ map <leader>x :bprevious<cr>:bdelete #<cr>
 map <leader>X :bdelete<cr>
 
 nmap <leader><cr> :nohlsearch<CR>
-nmap <leader>a :Ag!<space>
-nmap <leader>A :Ag<space>
-nmap <leader>w :Ag!<space><C-r><C-w><cr>
-nmap <leader>W :Ag<space><C-r><C-w><cr>
+nmap <leader>a :ag!<space>
+nmap <leader>A :ag<space>
+nmap <leader>w :ag!<space><C-r><C-w><cr>
+nmap <leader>W :ag<space><C-r><C-w><cr>
 
 " yank until the end of the line
 nmap Y y$
