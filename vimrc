@@ -309,8 +309,8 @@ function! RunSpecs(filename)
 endfunction
 
 function! RunTests(filename)
-  silent exec ":!echo ruby -Ivendor/bundle -Itest -Ispec -Ilib " . a:filename
-  exec ":!time ruby -Ivendor/bundle -Itest -Ispec -Ilib " . a:filename
+  silent exec ":!echo ruby -Ivendor/bundle -Itest -Ispec -Ilib -rbundler/setup " . a:filename
+  exec ":!time ruby -Ivendor/bundle -Itest -Ispec -Ilib -rbundler/setup " . a:filename
 endfunction
 
 function! RunLein(filename)
@@ -339,7 +339,7 @@ function! ToggleRerunLastCommand()
 endfunction
 
 nmap <leader>. :call RunTestFile()<CR>
-nmap <leader>> :silent !clear<cr>:w<cr>:!ruby -Ivendor/bundle -Itest -Ispec -Ilib %<cr>
+nmap <leader>> :silent !clear<cr>:w<cr>:!ruby -Ivendor/bundle -Itest -Ispec -Ilib -rbundler/setup %<cr>
 nmap <leader>! :call ToggleRerunLastCommand()<CR>
 
 
