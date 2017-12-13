@@ -1,5 +1,6 @@
 set clipboard=unnamed  " link vim and the system's clipboards
 set ignorecase         " ignore case when searching.
+set visualbell         " silence bell http://jason-stillwell.com/blog/2013/04/11/ideavim/
 
 let mapleader = ","
 
