@@ -25,3 +25,4 @@ nmap <leader>u :action ShowUsages<enter>
 nmap <leader>h :action QuickJavaDoc<enter>
 
 map <leader>g :action Github.Open.In.Browser<enter>
+map <leader>v :action IntroduceVariable<enter>
