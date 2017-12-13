@@ -49,6 +49,10 @@ set noesckeys                   " Esc in insert mode is recognized immediately.
                                 " Without this, using Esc to get out of insert
                                 " mode followed by O is delayed.
 
+set lazyredraw                  " Scrolling is laggy. Enabling this setting
+                                " seems to reduce the lag but am unsure of the
+                                " side effects.
+
 """ Tab completion
 set wildmenu
 set wildmode=list:full,full
