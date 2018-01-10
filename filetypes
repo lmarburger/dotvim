@@ -17,6 +17,9 @@ filetype plugin indent on
 " ruby and yaml files are indented by two
 autocmd FileType ruby,rdoc,cucumber,yaml set softtabstop=2 tabstop=2 shiftwidth=2
 
+" erlang files are indented by four
+autocmd FileType erlang set softtabstop=4 tabstop=4 shiftwidth=4
+
 " Various ruby files
 autocmd BufNewFile,BufRead Gemfile     setfiletype ruby
 autocmd BufNewFile,BufRead Isolate     setfiletype ruby
