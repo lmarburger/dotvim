@@ -271,9 +271,9 @@ function! RunTestFile()
   let in_spec_file = match(expand('%:t'), '_spec.rb$') != -1
   let in_test_file = match(expand('%:t'), '_test.rb$\|/test_') != -1 && expand('%:t') != 'test_helper.rb'
   let in_clj_file  = expand('%:e') == 'clj'
-  let in_hs_file   = expand('%:e') == 'hs'
+  let in_erl_file = match(expand('%:t'), '_test_\?.erl$') != -1
 
-  if in_spec_file || in_test_file || in_clj_file || in_hs_file
+  if in_spec_file || in_test_file || in_clj_file || in_erl_file
     let g:grb_test_file=@%
     if in_spec_file && executable('rspec')
       let g:grb_test_runner='spec'
@@ -281,8 +281,8 @@ function! RunTestFile()
       let g:grb_test_runner='test'
     elseif in_clj_file
       let g:grb_test_runner='clj'
-    elseif in_hs_file
-      let g:grb_test_runner='hs'
+    elseif in_erl_file
+      let g:grb_test_runner='erl'
     end
   end
 
@@ -302,9 +302,9 @@ function! RunTestFile()
   elseif g:grb_test_runner == 'clj'
     echo 'clj'
     call RunLein(g:grb_test_file)
-  elseif g:grb_test_runner == 'hs'
-    echo 'hs'
-    call RunCabal(g:grb_test_file)
+  elseif g:grb_test_runner == 'erl'
+    echo 'erl'
+    call RunEUnit(g:grb_test_file)
   endif
 endfunction
 
@@ -324,9 +324,9 @@ function! RunLein(filename)
   exec ":!time lein test"
 endfunction
 
-function! RunCabal(filename)
-  silent exec ":!echo cabal test"
-  exec ":!time cabal test"
+function! RunEUnit(filename)
+  silent exec ":!echo eunit test"
+  exec ":!time make test"
 endfunction
 
 function! RerunLastCommand()
