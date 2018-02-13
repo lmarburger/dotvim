@@ -325,8 +325,8 @@ function! RunLein(filename)
 endfunction
 
 function! RunEUnit(filename)
-  silent exec ":!echo eunit test"
-  exec ":!time make test"
+  silent exec ":!echo rebar3 eunit"
+  exec ":!time rebar3 eunit"
 endfunction
 
 function! RerunLastCommand()
