@@ -231,20 +231,6 @@ function! SizeWindow()
   end
 endfunction
 
-" Pipe the selection to the CoffeeScript compile and print the result.
-function! CompileCoffee() range
-  let code = shellescape(join(getline(a:firstline, a:lastline), "\n"))
-
-  " shellescape() escapes newlines and encloses in single quotes. Code needs
-  " to be wrapped in double quotes and use real newlines in order to be
-  " processed correctly.
-  let code = substitute(code, "\\\\\n", "\n", "g")
-
-  echo system("echo " . code . "| coffee -scb")
-endfunction
-
-vmap <leader>c :call CompileCoffee()<CR>
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
