@@ -45,9 +45,8 @@ set nojoinspaces                " never use two spaces when joining lines
 set backspace=indent,eol,start  " allow backspacing over autoindent,
                                 " line breaks, and start of insert
 
-set noesckeys                   " Esc in insert mode is recognized immediately.
-                                " Without this, using Esc to get out of insert
-                                " mode followed by O is delayed.
+set timeoutlen=1000             " Esc key is recognized immediately. See:
+set ttimeoutlen=0               "   https://www.johnhawthorn.com/2012/09/vi-escape-delays/
 
 set lazyredraw                  " Scrolling is laggy. Enabling this setting
                                 " seems to reduce the lag but am unsure of the
