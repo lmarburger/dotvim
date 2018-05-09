@@ -74,15 +74,21 @@ set t_Co=256                " more than 8 colors, kthx
 " set macligatures
 set guifont=Fira\ Code:h18  " Menlo & Source Code Pro are other great fonts
 set fillchars=              " don't need characters when we have colors
-set background=dark
-colorscheme base16-default-dark
-" colorscheme larry
 
 """ Color tweaks
-highlight ColorColumn ctermbg=233
 highlight TabLine     ctermbg=0
 highlight TabLineSel  ctermbg=0
 highlight TabLineFill ctermbg=0
+
+""" Dark colors: base16-default-dark iTerm2 color scheme
+set background=dark
+colorscheme base16-default-dark
+highlight ColorColumn ctermbg=233
+
+" """ Light colors: base16-default-light iTerm2 color scheme
+" set background=light
+" colorscheme base16-default-light
+" highlight ColorColumn ctermbg=10
 
 
 " """ Presentation
@@ -197,6 +203,8 @@ map <leader>m :silent !open "%" -a /Applications/Marked.app<cr>:redraw!<cr>
 """ Select the last pasted text
 nmap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
+""" Abbreviation expansions
+iab TDL TODO(lmarburger)
 
 augroup Config
   autocmd!
