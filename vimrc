@@ -117,6 +117,20 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+"disable syntastic on a per buffer basis (some work files blow it up)
+function! SyntasticToggleBuffer()
+  if exists('b:syntastic_skip_checks')
+    unlet b:syntastic_skip_checks
+    echo 'Syntastic enabled for this buffer'
+    SyntasticCheck
+  else
+    let b:syntastic_skip_checks = 1
+    echo 'Syntastic disabled for this buffer'
+    SyntasticReset
+  end
+endfunction
+command! SyntasticToggleBuffer call SyntasticToggleBuffer()
+
 function! FindCabalSandboxRoot()
     return finddir('.cabal-sandbox', './;')
 endfunction
