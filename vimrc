@@ -319,8 +319,8 @@ function! RunSpecs(filename)
 endfunction
 
 function! RunTests(filename)
-  silent exec ":!echo ruby -Ivendor/bundle -Itest -Ispec -Ilib -rbundler/setup " . a:filename
-  exec ":!time ruby -Ivendor/bundle -Itest -Ispec -Ilib -rbundler/setup " . a:filename
+  silent exec ":!echo ruby -W2 -Ivendor/bundle -Itest -Ispec -Ilib -rbundler/setup " . a:filename
+  exec ":!time ruby -W2 -Ivendor/bundle -Itest -Ispec -Ilib -rbundler/setup " . a:filename
 endfunction
 
 function! RunLein(filename)
