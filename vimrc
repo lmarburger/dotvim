@@ -75,21 +75,31 @@ set t_Co=256                " more than 8 colors, kthx
 set guifont=Fira\ Code:h18  " Menlo & Source Code Pro are other great fonts
 set fillchars=              " don't need characters when we have colors
 
+set background=dark
+
 """ Color tweaks
-highlight TabLine     ctermbg=0
-highlight TabLineSel  ctermbg=0
-highlight TabLineFill ctermbg=0
+" highlight TabLine     ctermbg=0
+" highlight TabLineSel  ctermbg=0
+" highlight TabLineFill ctermbg=0
+
+colorscheme srcery
+highlight CursorLine  ctermbg=235 cterm=none
+highlight ColorColumn ctermbg=234
+
+" colorscheme tender
+" highlight Normal      ctermbg=0
+" highlight CursorLine  cterm=none ctermbg=235
+" highlight ColorColumn ctermbg=234
 
 """ Dark colors: base16-default-dark iTerm2 color scheme
-set background=dark
-colorscheme base16-default-dark
-highlight ColorColumn ctermbg=233
+" set background=dark
+" let base16colorspace=256
+" colorscheme base16-default-dark
 
 " """ Light colors: base16-default-light iTerm2 color scheme
 " set background=light
 " colorscheme base16-default-light
 " highlight ColorColumn ctermbg=10
-
 
 " """ Presentation
 " """

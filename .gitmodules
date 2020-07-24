@@ -70,3 +70,9 @@
 [submodule "bundle/vim-python-pep8-indent"]
 	path = bundle/vim-python-pep8-indent
 	url = git://github.com/Vimjas/vim-python-pep8-indent.git
+[submodule "bundle/srcery-vim"]
+	path = bundle/srcery-vim
+	url = https://github.com/srcery-colors/srcery-vim.git
+[submodule "bundle/tender-vim"]
+	path = bundle/tender-vim
+	url = https://github.com/jacoborus/tender.vim.git

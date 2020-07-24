@@ -1,4 +1,6 @@
-set clipboard=unnamed  " link vim and the system's clipboards
+set ideajoin           " join using IDE (unsure if I want this)
+"set clipboard+=ideaput " link vim and the system's clipboards
+set clipboard=unnamed  "
 set ignorecase         " ignore case when searching.
 set visualbell         " silence bell http://jason-stillwell.com/blog/2013/04/11/ideavim/
 set surround           " Emulates vim-surround
@@ -15,6 +17,7 @@ nmap <leader>s :action SaveAll<enter>
 
 nmap <leader>. :action Rerun<enter>
 nmap <leader>> :action RunClass<enter>
+nmap <leader>R :action RunContextPopupGroup<enter>
 
 nmap <leader>f :action MoveTabRight<enter>
 nmap <leader>S :action MoveTabDown<enter>
@@ -26,4 +29,5 @@ nmap <leader>u :action ShowUsages<enter>
 nmap <leader>h :action QuickJavaDoc<enter>
 
 map <leader>g :action Github.Open.In.Browser<enter>
+map <leader>A :action Annotate<enter>
 map <leader>v :action IntroduceVariable<enter>
